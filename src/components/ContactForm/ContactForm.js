@@ -9,17 +9,21 @@ import { Form, Label, Input, Button } from "./ContactForm.styled";
     };
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const {name, value} = e.currentTarget;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.submitForm(this.state);
+    this.props.onSubmit(this.state);
     this.reset();
   };
 
   reset = () => {
-    this.setState({ name: "", number: "" });
+    this.setState({ 
+      name: "", 
+      number: "" 
+    });
   };
 
   render() {
@@ -55,8 +59,8 @@ import { Form, Label, Input, Button } from "./ContactForm.styled";
 
 
 
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
+ ContactForm.propTypes = {
+   onSubmit: PropTypes.node.isRequired,
+ };
 
 export default ContactForm
