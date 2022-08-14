@@ -1,4 +1,5 @@
 import { GlobalStyle } from './GlobalStyle';
+import { Box } from 'components/Box';
 import { Component } from "react";
 import { nanoid } from "nanoid";
 
@@ -53,25 +54,36 @@ class App extends Component {
 
   render() {
     const { filter } = this.state;
+    const filteredContactList = this.filteredContactList();
     return (
-      <>
-      
-     
-        <h1>Phonebook</h1>
-        <ContactForm onSubmit={this.addContact}></ContactForm>
+      <Box
+      display = 'flex'
+      flexDirection = 'column'
+      alignItems = 'center'
+      justifyContent = 'center'
+      fontSize = {24}
+      padding= {15}
+      >
+     <div>
+      <h1>Phonebook</h1>
+      </div>
+       
+       
+        <ContactForm onSubmit={this.addContact} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={this.changeFilter} />
 
         {this.state.contacts.length > 0 ? (
           <ContactList
-            contacts={this.filteredContactList()}
+            contacts={filteredContactList}
             onDeleleButton={this.deleteContact} />
         ) : (
           <p>Contact list is empty</p>
         )}
       
       <GlobalStyle />
-      </>
+      
+      </Box>
       
     );
     

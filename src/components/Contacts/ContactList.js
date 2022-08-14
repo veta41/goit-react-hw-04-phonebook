@@ -1,4 +1,4 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import {
   List,
   ContactCard,
@@ -26,14 +26,14 @@ const ContactList = ({ contacts, onDeleleButton }) => {
 };
 
 ContactList.propTypes = {
-  contacts: propTypes.arrayOf(
-    propTypes.exact({
-      id: propTypes.string.isRequired,
-      name: propTypes.string.isRequired,
-      number: propTypes.string.isRequired,
+  contacts: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
     })
   ),
-  onDeleleButton: propTypes.func.isRequired,
+  onDeleleButton: PropTypes.func.isRequired,
 };
 
 export default ContactList;

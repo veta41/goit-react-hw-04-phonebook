@@ -1,28 +1,28 @@
-import { Component } from "react";
-import PropTypes from "prop-types";
-import { Form, Label, Input, Button } from "./ContactForm.styled";
+import { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Form, Label, Input, Button } from './ContactForm.styled';
 
- class ContactForm extends Component {
+class ContactForm extends Component {
   state = {
-     name: "", 
-     number: "" 
-    };
+    name: '',
+    number: '',
+  };
 
-  handleChange = (e) => {
-    const {name, value} = e.currentTarget;
+  handleChange = e => {
+    const { name, value } = e.currentTarget;
     this.setState({ [name]: value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
     this.props.onSubmit(this.state);
     this.reset();
   };
 
   reset = () => {
-    this.setState({ 
-      name: "", 
-      number: "" 
+    this.setState({
+      name: '',
+      number: '',
     });
   };
 
@@ -57,10 +57,8 @@ import { Form, Label, Input, Button } from "./ContactForm.styled";
   }
 }
 
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
-
- ContactForm.propTypes = {
-   onSubmit: PropTypes.node.isRequired,
- };
-
-export default ContactForm
+export default ContactForm;

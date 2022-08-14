@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  list-style: none;
-  margin-top: 20px;
   margin: 0 auto;
 `;
 export const ContactCard = styled.li`
@@ -28,6 +26,7 @@ export const DeleteBtn = styled.button`
   border-radius: 4px;
   height: 30px;
   padding: 10px;
+  margin-left: 10px;
   border: none;
   background-color: #4b4b4b;
   color: white;
