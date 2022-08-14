@@ -27,23 +27,25 @@ class ContactForm extends Component {
   };
 
   render() {
+    const { name, number } = this.state;
+    const { handleSubmit, handleChange } = this;
     return (
-      <Form onSubmit={this.handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <Label htmlFor="contact_name">Name</Label>
         <Input
-          onChange={this.handleChange}
+          onChange={handleChange}
           id="contact_name"
           type="text"
           name="name"
-          value={this.state.name}
+          value={name}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
         />
         <Label htmlFor="contact_number">Number</Label>
         <Input
-          onChange={this.handleChange}
-          value={this.state.number}
+          onChange={handleChange}
+          value={number}
           id="contact_number"
           type="tel"
           name="number"

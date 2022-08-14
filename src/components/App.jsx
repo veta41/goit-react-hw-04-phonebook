@@ -2,10 +2,11 @@ import { GlobalStyle } from './GlobalStyle';
 import { Box } from 'components/Box';
 import { Component } from "react";
 import { nanoid } from "nanoid";
-
 import ContactForm from "./ContactForm/ContactForm";
 import Filter from "./Filter/Filter";
 import ContactList from "./Contacts/ContactList";
+
+
 class App extends Component {
   state = {
     contacts: [
@@ -53,7 +54,8 @@ class App extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
+    const {addContact, changeFilter, deleteContact} = this;
     const filteredContactList = this.filteredContactList();
     return (
       <Box
@@ -69,14 +71,14 @@ class App extends Component {
       </div>
        
        
-        <ContactForm onSubmit={this.addContact} />
+        <ContactForm onSubmit={addContact} />
         <h2>Contacts</h2>
-        <Filter value={filter} onChange={this.changeFilter} />
+        <Filter value={filter} onChange={changeFilter} />
 
-        {this.state.contacts.length > 0 ? (
+        {contacts.length > 0 ? (
           <ContactList
             contacts={filteredContactList}
-            onDeleleButton={this.deleteContact} />
+            onDeleleButton={deleteContact} />
         ) : (
           <p>Contact list is empty</p>
         )}
