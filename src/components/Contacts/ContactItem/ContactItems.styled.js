@@ -20,12 +20,12 @@ export const DeleteBtn = styled.button`
   align-items: center;
   justify-content: center;
   width: 50px;
-  border-radius: 4px;
+  border-radius: 5px;
   height: 30px;
-  padding: 10px;
+  padding: 17px 40px;
   margin-left: 10px;
   border: none;
-  background-color: #4b4b4b;
+  background-color: #9e9e99;
   color: white;
   cursor: pointer;
 `;

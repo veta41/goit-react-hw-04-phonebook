@@ -7,9 +7,10 @@ export const Form = styled.form`
   font-size: 1.2em;
   flex-direction: column;
   gap: 10px;
-  background-color: #ddd;
+  background-color: #e3e3e3;
   border-radius: 10px;
   margin-bottom: 24px;
+  width: 500px; ;
 `;
 
 export const Label = styled.label`
@@ -19,9 +20,11 @@ export const Label = styled.label`
 `;
 
 export const Input = styled.input`
-  height: 40px;
+  height: 50px;
   width: 100%;
   padding: 0 10px 0 10px;
+  border: 1px solid #91918d;
+  border-radius: 5px;
   &::placeholder {
     font-size: 12px;
   }
@@ -32,12 +35,11 @@ export const Button = styled.button`
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 40px;
-  background-color: #4b4b4b;
+  height: 50px;
+  background-color: #9e9e99;
   color: white;
-  font-size: 15px;
+  font-size: 25px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 50px;
 `;
