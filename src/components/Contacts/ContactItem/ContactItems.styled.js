@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const ContactCard = styled.li`
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   :not(:last-child) {
     margin-bottom: 10px;
@@ -12,9 +12,11 @@ export const ContactCard = styled.li`
 `;
 export const Name = styled.span`
   font-weight: 600;
+  width: 30%;
 `;
 export const Number = styled.span`
   font-weight: 700;
+  width: 30%;
 `;
 export const DeleteBtn = styled.button`
   display: inline-flex;
