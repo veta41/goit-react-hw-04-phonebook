@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContactCard = styled.li`
   display: flex;
-  /* flex-direction: row; */
+ 
   align-items: center;
   justify-content: space-between;
 

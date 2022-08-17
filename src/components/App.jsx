@@ -57,7 +57,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log('app componentDidMount');
+    
     // читаем данные из localStorage
     const contacts = localStorage.getItem('contacts');
     const parseContacts = JSON.parse(contacts);
@@ -69,7 +69,7 @@ class App extends Component {
 
   componentDidUpdate(prevProps, prevState) {
 
-    console.log('app componentDidUpdate');
+    
     const { contacts } = this.state;
     // если данные изменились пишем всех в localStorage
     
