@@ -18,23 +18,7 @@ class App extends Component {
     filter: '',
   };
 
-  componentDidMount() {
-    // читаем данные из localStorage
-    const contacts = localStorage.getItem('contacts');
-    const parseContacts = JSON.parse(contacts);
-    // если они там есть ;)
-    if (parseContacts) {
-      this.setState({ contacts: parseContacts });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const { contacts } = this.state;
-    // если данные изменились пишем всех в localStorage
-    if (prevState.contacts !== contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
-  }
+  
 
 
   addContact = ({ name, number }) => {
@@ -71,6 +55,28 @@ class App extends Component {
       contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
+
+  componentDidMount() {
+    console.log('app componentDidMount');
+    // читаем данные из localStorage
+    const contacts = localStorage.getItem('contacts');
+    const parseContacts = JSON.parse(contacts);
+    // если они там есть ;)
+    if (parseContacts) {
+      this.setState({ contacts: parseContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
+    console.log('app componentDidUpdate');
+    const { contacts } = this.state;
+    // если данные изменились пишем всех в localStorage
+    
+    if (prevState.contacts !== contacts) {
+      localStorage.setItem('contacts', JSON.stringify(contacts));
+    }
+  }
 
   render() {
     const { filter, contacts } = this.state;

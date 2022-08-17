@@ -2,15 +2,16 @@ import styled from 'styled-components';
 
 export const ContactCard = styled.li`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+
   :not(:last-child) {
     margin-bottom: 10px;
   }
 `;
 export const Name = styled.span`
   font-weight: 600;
-  margin-right: 10px;
 `;
 export const Number = styled.span`
   font-weight: 700;
