@@ -79,12 +79,16 @@ function App(){
         <h2>Contacts</h2>
         <Filter value={filter} onChange={changeFilter} />
 
-      
+        {contacts.length > 0 ? (
           <ContactList
             contacts={filteredContactList}
             onDeleteButton={onDeleteButton} />
         
-      
+            ) : (
+              <p>Contact list is empty</p>
+            )}
+
+     
       <GlobalStyle />
       
       </Box>
