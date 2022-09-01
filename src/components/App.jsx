@@ -28,25 +28,26 @@ function App(){
 
 
   
-  const deleteContact = idContact => {
+  const onDeleteButton = idContact => {
     setContacts(contacts.filter(contact => contact.id !== idContact));
       };
 
   
 
-      const addContact = data => {
-        const contact = {
-          id: nanoid(),
-          name: data.name,
-          number: data.number,
+      const addContact = ({ name, number }) => {
+        const id = nanoid();
+        const contactItem = {
+          id,
+          name,
+          number,
         };
     
-        if (contacts.find(contact => contact.name.toLowerCase() === data.name.toLowerCase())) {
-          alert(`${data.name} is already in contacts`);
+        if (contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())) {
+          alert(`${name} is already in contacts`);
           return;
         };
     
-        setContacts(prevState => [contact, ...prevState]
+        setContacts(prevState => [contactItem, ...prevState]
         );
       };
     
@@ -78,13 +79,11 @@ function App(){
         <h2>Contacts</h2>
         <Filter value={filter} onChange={changeFilter} />
 
-        {contacts.length > 0 ? (
+      
           <ContactList
             contacts={filteredContactList}
-            onDeleleButton={deleteContact} />
-        ) : (
-          <p>Contact list is empty</p>
-        )}
+            onDeleteButton={onDeleteButton} />
+        
       
       <GlobalStyle />
       
